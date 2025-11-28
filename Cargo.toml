@@ -1,0 +1,46 @@
+[package]
+name = "sguaba-celestial"
+version = "0.1.0"
+edition = "2021"
+authors = ["Stefan Kochev"]
+license = "MIT OR Apache-2.0"
+description = "Celestial reference frames and orbital mechanics for the sguaba coordinate system library"
+repository = "https://github.com/skochev84/sguaba"
+documentation = "https://docs.rs/sguaba-celestial"
+readme = "README.md"
+keywords = ["celestial", "orbital-mechanics", "spacecraft", "astrodynamics", "icrs"]
+categories = ["science", "simulation"]
+
+[dependencies]
+sguaba = "0.9.11"
+nalgebra = "0.34.1"
+uom = { version = "0.37.0", features = ["f64", "si"] }
+chrono = { version = "0.4", features = ["serde"] }
+typenum = "1.18.0"
+
+[features]
+serde = ["dep:serde"]
+
+[dependencies.serde]
+version = "1.0"
+optional = true
+features = ["derive"]
+
+[dev-dependencies]
+approx = "0.5.1"
+
+
+[[example]]
+name = "comprehensive-celestial-demo"
+
+[[example]]
+name = "lunar-surface-operations"
+
+[[example]]
+name = "orbital-mechanics-demo"
+
+[[example]]
+name = "satellite-orbit-propagation"
+
+[[example]]
+name = "spaceship-intercept"
